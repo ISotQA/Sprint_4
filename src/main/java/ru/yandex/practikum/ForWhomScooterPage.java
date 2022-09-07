@@ -16,28 +16,35 @@ public class ForWhomScooterPage extends BasePage{
         super(webDriver);
     }
 
-    public void enterName(String text) {
-        webDriver.findElement(nameField).sendKeys(text);
+    public void enterName(String name) {
+        webDriver.findElement(nameField).sendKeys(name);
     }
 
-    public void enterSurname(String text) {
-        webDriver.findElement(surnameField).sendKeys(text);
+    public void enterSurname(String surname) {
+        webDriver.findElement(surnameField).sendKeys(surname);
     }
 
-    public void enterAddress(String text) {
-        webDriver.findElement(addressField).sendKeys(text);
+    public void enterAddress(String address) {
+        webDriver.findElement(addressField).sendKeys(address);
     }
 
-    public void chooseMetroStation(String text) {
-        webDriver.findElement(metroStationField).sendKeys(text);
-        webDriver.findElement(By.xpath(String.format(stationItem, text))).click();
+    public void chooseMetroStation(String stationMetro) {
+        webDriver.findElement(metroStationField).sendKeys(stationMetro);
+        webDriver.findElement(By.xpath(String.format(stationItem, stationMetro))).click();
     }
 
-    public void enterPhoneNumber(String text) {
-        webDriver.findElement(phoneNumberField).sendKeys(text);
+    public void enterPhoneNumber(String phoneNumber) {
+        webDriver.findElement(phoneNumberField).sendKeys(phoneNumber);
     }
 
     public void clickFurther() {
         webDriver.findElement(furtherButton).click();
+    }
+    public void fillCustomerInformation(String name, String surname, String address, String stationMetro, String phoneNumber) {
+        enterName(name);
+        enterSurname(surname);
+        enterAddress(address);
+        chooseMetroStation(stationMetro);
+        enterPhoneNumber(phoneNumber);
     }
 }

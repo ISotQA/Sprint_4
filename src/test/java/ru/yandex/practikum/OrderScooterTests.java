@@ -12,20 +12,11 @@ public class OrderScooterTests extends BaseUITest{
         mainPage.clickOrderButton();
 
         ForWhomScooterPage forWhomScooterPage = new ForWhomScooterPage(webDriver);
-        forWhomScooterPage.enterName("Ирина");
-        forWhomScooterPage.enterSurname("Сотникова");
-        forWhomScooterPage.enterAddress("Кременчугская, 87");
-        forWhomScooterPage.chooseMetroStation("Лубянка");
-        forWhomScooterPage.enterPhoneNumber("89116243567");
+        forWhomScooterPage.fillCustomerInformation("Ирина", "Сотникова", "Кременчугская, 87", "Лубянка", "89116243567");
         forWhomScooterPage.clickFurther();
 
         AboutRentPage aboutRentPage = new AboutRentPage(webDriver);
-        aboutRentPage.chooseDeliveryDate();
-        aboutRentPage.pickerDate();
-        aboutRentPage.clickRentalPeriod();
-        aboutRentPage.chooseOptionRentalPeriod();
-        aboutRentPage.chooseScooterColorCheckbox();
-        aboutRentPage.clickSecondOrderButton();
+        aboutRentPage.fillRentInformation();
 
         ConfirmationOrderPage confirmationOrderPage = new ConfirmationOrderPage(webDriver);
         Assert.assertTrue(confirmationOrderPage.isDisplayedOrderConfirmationPage());
@@ -39,20 +30,11 @@ public class OrderScooterTests extends BaseUITest{
         mainPage.clickOrderButton();
 
         ForWhomScooterPage forWhomScooterPage = new ForWhomScooterPage(webDriver);
-        forWhomScooterPage.enterName("Смирнов");
-        forWhomScooterPage.enterSurname("Сергей");
-        forWhomScooterPage.enterAddress("Седова, 1");
-        forWhomScooterPage.chooseMetroStation("Сокольники");
-        forWhomScooterPage.enterPhoneNumber("89123456789");
+        forWhomScooterPage.fillCustomerInformation("Сергей", "Смирнов", "Седова, 1", "Сокольники", "89123456789");
         forWhomScooterPage.clickFurther();
 
         AboutRentPage aboutRentPage = new AboutRentPage(webDriver);
-        aboutRentPage.chooseDeliveryDate();
-        aboutRentPage.pickerDate();
-        aboutRentPage.clickRentalPeriod();
-        aboutRentPage.chooseOptionRentalPeriod();
-        aboutRentPage.chooseScooterColorCheckbox();
-        aboutRentPage.clickSecondOrderButton();
+        aboutRentPage.fillRentInformation();
 
         ConfirmationOrderPage confirmationOrderPage = new ConfirmationOrderPage(webDriver);
         Assert.assertTrue(confirmationOrderPage.isDisplayedOrderConfirmationPage());

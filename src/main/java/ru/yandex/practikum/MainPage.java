@@ -9,7 +9,7 @@ public class MainPage extends BasePage{
     private By cookieButton = By.xpath("//button[@id='rcc-confirm-button']");
     private By orderButton = By.xpath("//button[@class='Button_Button__ra12g']");
     private String dropDownQuestion = ".//div[text()='%s']";
-    private String dropDownAnswer = ".//p[text()='%s']";
+    private String dropDownAnswer = ".//div[@id='accordion__panel-%s']";
 
     public MainPage(WebDriver webDriver) {
         super(webDriver);
@@ -33,8 +33,7 @@ public class MainPage extends BasePage{
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", element);
     }
 
-    public String getAnswer(String answer) {
-        return webDriver.findElement(By.xpath(String.format(dropDownAnswer, answer))).getText();
-
+    public String getAnswer(int expectedAnswer) {
+        return webDriver.findElement(By.xpath(String.format(dropDownAnswer, expectedAnswer))).getText();
     }
 }

@@ -38,4 +38,13 @@ public class AboutRentPage extends BasePage{
     public void clickSecondOrderButton() {
         webDriver.findElement(secondOrderButton).click();
     }
+
+    public void fillRentInformation() {
+        chooseDeliveryDate();
+        pickerDate();
+        clickRentalPeriod();
+        chooseOptionRentalPeriod();
+        chooseScooterColorCheckbox();
+        clickSecondOrderButton();
+    }
 }
